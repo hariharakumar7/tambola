@@ -1,23 +1,20 @@
-import React from "react";
-import "./Block.css";
+import React from 'react'
+import './Block.css'
 
 class Block extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+  render () {
     return (
       <div
-        className="Block"
+        className='Block'
         style={{
           backgroundColor:
-            this.props.value.split(",")[1] === "n" ? "#ececec" : "#fff",
+            this.props.value.split(',')[1] === 'n' ? '#ececec' : '#fff'
         }}
       >
-        <p>{this.props.value.split(",")[0]}</p>
+        <p>{this.props.value.split(',')[0]}</p>
       </div>
-    );
+    )
   }
 }
 
-export default Block;
+export default Block

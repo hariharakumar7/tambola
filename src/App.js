@@ -1,7 +1,6 @@
 import "./App.css";
 import React from "react";
 import Board from "./Board";
-import { render } from "@testing-library/react";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class App extends React.Component {
     };
   }
 
-  handleClick = () => {
+  handleClick = (event) => {
     if (!this.state.disabled) {
       if (this.state.coins.length > 0) {
         const randomIndex = Math.floor(Math.random() * this.state.coins.length);
@@ -33,9 +32,9 @@ class App extends React.Component {
         });
       }
     }
-    this.state.disabled = true;
+    this.setState({ disabled: true });
     setTimeout(() => {
-      this.state.disabled = false;
+      this.setState({ disabled: false });
     }, 0);
   };
   render() {
